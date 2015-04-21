@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>FogBugz Time Tracking</title>
+	<style>
+		body {
+			font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+			font-size: 100%;
+		}
+		#cases {
+			white-space: pre;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			width: 600px;
+			font-size: 11px;
+			overflow-y: auto;
+		}
+		#cases .row {
+			padding: 3px;
+		}
+		.header {
+			background-color: #BDDE5C;
+		}
+		#cases .row:nth-child(odd) {
+			background-color: #fafafa;
+		}
+		#cases .row:nth-child(even) {
+			background-color: #eaeaea;
+		}
+	</style>
+	<script src="jquery-2-1-3.min"></script>
+	<script src="popup.js"></script>
+</head>
+<body>
+	<div id="cases">Searching...</div>
+	<img id="image-result" hidden>
+</body>
+</html>

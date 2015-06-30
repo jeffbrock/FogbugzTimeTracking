@@ -122,7 +122,7 @@ function gethoursForCurrentPeriod(onSuccess, onError) {
 	}
 
 	try {
-		chrome.cookies.get({ url: "https://altsource.fogbugz.com", name: "fbToken" }, function (cookie) {
+		chrome.cookies.get({ url: "https://fogbugz.com", name: "fbToken" }, function (cookie) {
 			token = cookie.value;
 		});
 		xhr.onreadystatechange = function () {
@@ -153,7 +153,7 @@ function gethoursForCurrentPeriod(onSuccess, onError) {
 		localStorage.previousPeriodStart = prevStart;
 		localStorage.previousPeriodEnd = new Date(period.previousPeriodEnd);
 
-		xhr.open("POST", "https://altsource.fogbugz.com/api.asp", true);
+		xhr.open("POST", "https://fogbugz.com/api.asp", true);
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		
 		xhr.send("cmd=listIntervals&dtStart=" + prevStart.toISOString() + "&dtEnd=" + currEnd.toISOString() + "&cols=sProject&token=" + token);
@@ -344,7 +344,7 @@ function onWatchdog() {
 }
 
 (function () {
-	chrome.cookies.get({ url: "https://altsource.fogbugz.com", name: "fbToken" }, function (cookie) {
+	chrome.cookies.get({ url: "https://fogbugz.com", name: "fbToken" }, function (cookie) {
 		token = cookie.value;
 	});
 
